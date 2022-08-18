@@ -18,19 +18,30 @@ namespace _01_Console
             //Test_Function();
             //Test_GuGudan();
 
-
-
             Character human1 = new Character();  // 메모리 할당 완료(Instance화). 객체(Object) 생성 완료(객체의 인스턴스를 만들었다)
             Character human2 = new Character("개굴맨맨");  // Character 타입으로 하나 더 만든 것. human1과 human2는 서로 다른 개체이다.
+           // Character Attack = new Att();
 
-            human1.Attack(human2);
-            human1.TestPrintStatus();
-            human2.TestPrintStatus();
-            human2.Attack(human1);
-            human1.TestPrintStatus();
-            human2.TestPrintStatus();
 
+            while (human2.HP <= 0)
+            {
+                human1.Attack(human2);
+               // Console.WriteLine($"{Attack}");
+
+                human1.TestPrintStatus();
+
+                human2.TestPrintStatus();
+                human2.Attack(human1);
+                human1.TestPrintStatus();
+                human2.TestPrintStatus();
+            }
+
+            
+
+
+            Console.WriteLine("캐릭터가 죽었습니다.");
             // 실습 : 26번 라인~31번 라인까지를 한쪽이 죽을 때까지 반복하기
+            // 힌트 (human2.HP <= 0);//(human1.HP <= 0);
 
             //Console.WriteLine($"{human1.HP}");
             //human1.HP = 20;
