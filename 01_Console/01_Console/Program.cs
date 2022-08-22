@@ -18,30 +18,40 @@ namespace _01_Console
             //Test_Function();
             //Test_GuGudan();
 
-            Character human1 = new Character();  // 메모리 할당 완료(Instance화). 객체(Object) 생성 완료(객체의 인스턴스를 만들었다)
-            Character human2 = new Character("개굴맨맨");  // Character 타입으로 하나 더 만든 것. human1과 human2는 서로 다른 개체이다.
-           // Character Attack = new Att();
+            //주말과제용
+            Console.Write("당신의 이름을 입력해 주세요 : ");
+            string name = Console.ReadLine();
+            player = new Human(name);
+            Human player = new Human(name);
 
-
-            while (human2.HP <= 0)
+            string result;
+            do
             {
-                human1.Attack(human2);
-               // Console.WriteLine($"{Attack}");
-
-                human1.TestPrintStatus();
-
-                human2.TestPrintStatus();
-                human2.Attack(human1);
-                human1.TestPrintStatus();
-                human2.TestPrintStatus();
+                Console.Write($"이대로 진행하시겠습니까?   (Yes/No) : ");
+                string result = Console.ReadLine();
             }
+            //while (!(result == "Yes" \\ result == "yes" \\ result == "y" \\ result == "Y"));
+            while (result != "Yes" && result != "yes" && result != "y" && result != "Y");
 
-            
+            Orc enemy = new Orc("가로쉬");
 
 
-            Console.WriteLine("캐릭터가 죽었습니다.");
+
+
+
+            Character human1 = new Character();  // 메모리 할당 완료(Instance화). 객체(Object) 생성 완료(객체의 인스턴스를 만들었다)
+           // Character human2 = new Character("개굴맨");  // Character 타입으로 하나 더 만든 것. human1과 human2는 서로 다른 개체이다.
+            Character human2 = new Character("개굴맨맨");  // Character 타입으로 하나 더 만든 것. human1과 human2는 서로 다른 개체이다.
+
+            Console.WriteLine($"{human1.HP}");
+            human1.Attack(human2);
+            human1.TestPrintStatus();
+            human2.TestPrintStatus();
+            human2.Attack(human1);
+            human1.TestPrintStatus();
+            human2.TestPrintStatus();
+
             // 실습 : 26번 라인~31번 라인까지를 한쪽이 죽을 때까지 반복하기
-            // 힌트 (human2.HP <= 0);//(human1.HP <= 0);
 
             //Console.WriteLine($"{human1.HP}");
             //human1.HP = 20;
@@ -58,7 +68,34 @@ namespace _01_Console
             Console.ReadKey();                  // 키 입력 대기하는 코드
         }   // Main 함수의 끝
 
-        private static void Test_GuGudan()
+
+        public void Skill()
+        {
+            Console.ReadKey();
+            Console.WriteLine("1.공격 2.방어 3.회복");
+
+
+            switch ()   //1~3 중에 입력받는 행동을 실행
+)           {
+                case 1
+                Console.WriteLine($"{Human}이 무기로 공격합니다.");
+                break;
+
+                case 2
+                Console.WriteLine($"{Human}이 방패로 방어합니다.");
+                break;
+
+                case 3
+                Console.WriteLine($"{Human}이 체력을 회복합니다.");
+                break;
+
+                default:
+                break;
+
+            }
+            
+            
+            private static void Test_GuGudan()
         {
             // 실습
             // 1. int 타입의 파라메터를 하나 받아서 그 숫자에 해당하는 구구단을 출력해주는 함수 만들기
@@ -93,7 +130,7 @@ namespace _01_Console
             {
                 Console.WriteLine($"구구단 {dan}단 출력");
                 // 구구단 출력
-                for(int i = 1; i<10 ; i++)
+                for (int i = 1; i < 10; i++)
                 {
                     Console.WriteLine($"{dan} * {i} = {dan * i}");
                 }
