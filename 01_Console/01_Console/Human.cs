@@ -13,9 +13,16 @@ namespace _01_Console
         int maxMp = 100;
 
         public Human()  // 상속받은 부모의 생성자도 같이 실행
+        {            
+        }
+
+        public Human(string newName) : base(newName)
         {
+<<<<<<< HEAD
             //GenerateStatus();
 
+=======
+>>>>>>> e21fd8ea4c5c289ab2fe1636c13340a5efec05fb
         }
 
         public override void GenerateStatus()
@@ -51,6 +58,7 @@ namespace _01_Console
             Console.WriteLine($"{name}이 {target.Name}에게 공격을 합니다.(공격력 : {damage})");
             target.TakeDamage(damage);
         }
+<<<<<<< HEAD
         
         public void Skill()
         {
@@ -74,5 +82,18 @@ namespace _01_Console
 
     
     
+=======
+
+        public void Skill(Character target)
+        {
+            // rand.NextDouble() : 0 ~ 1
+            // rand.NextDouble() * 1.5f : 0 ~ 1.5
+            // ((rand.NextDouble() * 1.5f) + 1) : 1 ~ 2.5
+
+            int damage = (int)(((rand.NextDouble() * 1.5f) + 1) * intellegence);    // 지능을 1 ~ 2.5배 한 결과에서 소수점 제거한 수
+            Console.WriteLine($"{name}이 {target.Name}에게 스킬을 사용 합니다.(공격력 : {damage})");
+            target.TakeDamage(damage);
+        }
+>>>>>>> e21fd8ea4c5c289ab2fe1636c13340a5efec05fb
     }
 }

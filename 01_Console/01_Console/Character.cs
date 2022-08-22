@@ -129,8 +129,12 @@ namespace _01_Console
             target.TakeDamage(damage);
         }
 
+<<<<<<< HEAD
   
         public void TakeDamage(int damage)
+=======
+        public virtual void TakeDamage(int damage)
+>>>>>>> e21fd8ea4c5c289ab2fe1636c13340a5efec05fb
         {
 
             HP -= damage;
